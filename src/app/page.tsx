@@ -1,5 +1,8 @@
 import { auth, signIn, signOut } from "auth";
 import Image from "next/image";
+import { Clock } from "./_components/ui/clock";
+import "src/styles/globals.css";
+import "src/styles/fonts.css";
 
 export default async function Home() {
 	const session = await auth();
@@ -24,10 +27,7 @@ export default async function Home() {
 						width={24}
 						height={24}
 					/>
-					<br />
-					name: {session.user?.name}
-					<br />
-					email: {session.user?.email}
+
 					<form
 						action={async () => {
 							"use server";
@@ -40,6 +40,8 @@ export default async function Home() {
 					</form>
 				</>
 			)}
+
+			<Clock />
 		</main>
 	);
 }
