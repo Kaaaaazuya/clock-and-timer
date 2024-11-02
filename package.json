@@ -9,14 +9,16 @@
 		"db:migrate": "prisma migrate deploy",
 		"db:push": "prisma db push",
 		"db:studio": "prisma studio",
-		"dev": "next dev", 
+		"dev": "next dev",
 		"postinstall": "prisma generate",
 		"preview": "next build && next start",
 		"lint": "biome lint -- apply ./src",
 		"format": "biome format ./src --write",
 		"check": "biome check --apply ./src",
 		"start": "next start",
-		"typecheck": "tsc --noEmit"
+		"typecheck": "tsc --noEmit",
+		"test": "vitest",
+		"test:coverage": "vitest run --coverage"
 	},
 	"dependencies": {
 		"@auth/prisma-adapter": "^2.7.2",
@@ -39,15 +41,22 @@
 		"zod": "^3.23.3"
 	},
 	"devDependencies": {
+		"@testing-library/jest-dom": "^6.6.3",
+		"@testing-library/react": "^16.0.1",
+		"@testing-library/user-event": "^14.5.2",
 		"@types/eslint": "^8.56.10",
 		"@types/node": "^20.14.10",
 		"@types/react": "^18.3.3",
 		"@types/react-dom": "^18.3.0",
 		"@typescript-eslint/eslint-plugin": "^8.1.0",
 		"@typescript-eslint/parser": "^8.1.0",
+		"@vitejs/plugin-react": "^4.3.3",
+		"@vitest/coverage-v8": "^2.1.4",
 		"eslint": "^8.57.0",
 		"eslint-config-next": "^15.0.1",
+		"happy-dom": "^15.8.0",
 		"prisma": "^5.21.1",
-		"typescript": "^5.5.3"
+		"typescript": "^5.5.3",
+		"vitest": "^2.1.4"
 	}
 }
