@@ -1,6 +1,13 @@
 import { style } from "@vanilla-extract/css";
 
+export const clockWrapper = style({
+	height: "100%",
+	display: "flex",
+	justifyContent: "center",
+	alignItems: "center",
+});
+
 export const clock = style({
 	fontFamily: "Share Tech Mono",
-	fontSize: 48,
+	fontSize: 252,
 });

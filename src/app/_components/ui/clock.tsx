@@ -1,7 +1,7 @@
 "use client";
 
 import { useCurrentTime } from "~/app/hooks/useCurrentTime";
-import { clock } from "./clock.css";
+import { clock, clockWrapper } from "./clock.css";
 
 export const Clock = () => {
 	const currentTime = useCurrentTime();
@@ -9,5 +9,16 @@ export const Clock = () => {
 		return null;
 	}
 
-	return <div className={clock}>{currentTime.toLocaleTimeString()}</div>;
+	return (
+		<div className={clockWrapper}>
+			<p className={clock}>
+				{currentTime.toLocaleTimeString("ja", {
+					hour12: false,
+					hour: "2-digit",
+					minute: "2-digit",
+					second: "2-digit",
+				})}
+			</p>
+		</div>
+	);
 };
