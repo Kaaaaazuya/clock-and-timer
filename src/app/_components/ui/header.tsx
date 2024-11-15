@@ -5,6 +5,7 @@ import { headerRightArea, headerStyle, headerTitle } from "./header.css";
 import { useCallback, useMemo } from "react";
 import { useAvatar } from "~/app/hooks/useAvatar";
 import { SignInWithGoogle } from "../icon/signInWithGoogle";
+import ThemeChanger from "../theme/themeChanger";
 
 type Props = {
 	session: Session | null;
@@ -40,6 +41,7 @@ export const Header = ({ session }: Props): JSX.Element => {
 					</button>
 				</form>
 			</div>
+			<ThemeChanger />
 		</header>
 	);
 };
